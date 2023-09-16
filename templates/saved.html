@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block head_title %}Saved{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/saved.css' %}">
+
+<div class="saved-content">
+    <div class="saved-statusrow">
+      <div class="saved-section">
+        <span class="saved-text003">
+          <span>Welcome Saved Page</span>
+        </span>
+        <span class="saved-text005">
+          <span>Saved Items</span>
+        </span>
+      </div>
+      <div class="saved-status">
+        <span class="saved-text007"><span>Saved</span></span>
+        <a href="{% url 'home' %}" class="saved-text009">
+          <span>Home</span>
+        </a>
+        <img alt="StyleOutlined1I214" src="{% static 'icons/greater.svg' %}" class="saved-style-outlined11"/>
+      </div>
+    </div>
+    <div class="saved-frame52">
+      <div class="saved-filter">
+
+        <div class="collections-selectrow">
+          <div class="collections-select">
+            <a href="?category=all">All</a>
+          </div>
+          <div class="collections-select">
+            <a href="?category=car">Car</a>
+          </div>
+          <div class="collections-select">
+            <a href="?category=motorcycle">Motorcycle</a>
+          </div>
+          <div class="collections-select">
+            <a href="?category=scooters">Scooters</a>
+          </div>
+        </div>
+
+        <div class="saved-statusrow1">
+          <div class="collections-active-button" id="collectionsActiveButton">
+            <button class="active-button" id="activeButton" onclick="showActive()">Active</button>
+          </div>
+          <div class="collections-inactive-button" id="collectionsUpcomingButton">
+            <button class="inactive-button" id="upcomingButton" onclick="showUpcoming()">Upcoming</button>
+          </div>
+          <div class="collections-inactive-button" id="collectionsClosedButton">
+            <button class="inactive-button" id="closedButton" onclick="showClosed()">Closed</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="openLot" style="display: block;">
+        <div class="collections-item-grid">
+          {% for lot in open_lots %}
+            <div class="collections-item-card">
+              <img alt="Card2022" src="{% static 'img/card.png' %}" class="collections-card"/>
+              <a href="{% url 'collection' pk=lot.id %}" class="collections-btn">
+                <span class="collections-text022">Place a Bid</span>
+              </a>
+              <div class="collections-info">
+                <span class="collections-text024">
+                  {{ time_left|get_price_for_lot:lot.id }}
+                  <br/>
+                </span>
+                <span class="collections-text029">
+                  {{ current_price|get_price_for_lot:lot.id }} ETH
+                </span>
+              </div>
+              <div class="collections-info01">
+                <div class="collections-matchvalue">
+                  <span class="collections-text031">Current Bid</span>
+                </div>
+                <span class="collections-text033">Time left</span>
+              </div>
+              <span class="collections-text034">
+                <span>{{ lot.name }}</span>
+              </span>
+              <img alt="no image" src="/media/{{ lot.img }}" class="collections-item"/>
+              <img alt="no background" src="{% static 'img/collections_background.svg' %}" class="collections-item"/>
+              <a href="{% url 'remove_from_favorites' lot.id %}">
+                <img alt="StyleOutlined32321" src="{% static 'icons/style%3Dfilled.svg' %}" class="saved-style-outlined31"/>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div id="upcomingLot" style="display: none;">
+        <div class="collections-item-grid">
+          {% for lot in upcoming_lots %}
+            <div class="collections-item-card">
+              <img alt="Card2022" src="{% static 'img/card.png' %}" class="collections-card"/>
+              <a href="{% url 'collection' pk=lot.id %}" class="collections-btn">
+                <span class="collections-text022">Info</span>
+              </a>
+              <div class="collections-info">
+                <span class="collections-text024">
+                  {{ start_auction|get_price_for_lot:lot.id|date:"d/m/Y H:i" }}
+                  <br/>
+                </span>
+                <span class="collections-text029">
+                  {{ initial_price|get_price_for_lot:lot.id }} ETH
+                </span>
+              </div>
+              <div class="collections-info01">
+                <div class="collections-matchvalue">
+                  <span class="collections-text031">Starting Price</span>
+                </div>
+                <span class="collections-text033">Start Auction</span>
+              </div>
+              <span class="collections-text034">
+                <span>{{ lot.name }}</span>
+              </span>
+              <img alt="no image" src="/media/{{ lot.img }}" class="collections-item"/>
+              <img alt="no background" src="{% static 'img/collections_background.svg' %}" class="collections-item"/>
+              <a href="{% url 'remove_from_favorites' lot.id %}">
+                <img alt="StyleOutlined32321" src="{% static 'icons/style%3Dfilled.svg' %}" class="saved-style-outlined31"/>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div id="closedLot" style="display: none;">
+        <div class="collections-item-grid">
+          {% for lot in closed_lots %}
+            <div class="collections-item-card">
+              <img alt="Card2022" src="{% static 'img/card.png' %}" class="collections-card-closed"/>
+              <div class="collections-info">
+                <span class="collections-text024">
+                  {{ winner|get_price_for_lot:lot.id }}
+                  <br/>
+                </span>
+                <span class="collections-text029">
+                  {{ selling_price|get_price_for_lot:lot.id }}
+                </span>
+              </div>
+              <div class="collections-info01">
+                <div class="collections-matchvalue">
+                  <span class="collections-text031">Selling Price</span>
+                </div>
+                <span class="collections-text033">Winner</span>
+              </div>
+              <span class="collections-text034">
+                <span>{{ lot.name }}</span>
+              </span>
+              <img alt="no image" src="/media/{{ lot.img }}" class="collections-item"/>
+              <img alt="no background" src="{% static 'img/collections_background.svg' %}" class="collections-item"/>
+              <a href="{% url 'remove_from_favorites' lot.id %}">
+                <img alt="StyleOutlined32321" src="{% static 'icons/style%3Dfilled.svg' %}" class="saved-style-outlined31"/>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      </div>
+    </div>
+</div>
+{% endblock %}

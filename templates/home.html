@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block head_title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="home-content">
+    <div class="home-frame61">
+      <div class="home-cardlist">
+        <div class="home-group5">
+          <div class="home-card">
+            <span class="home-text001">{{ n_openLots }}</span>
+            <span class="home-text003">Active Auction</span>
+            <div class="home-mark">
+              <img alt="Bg2178" src="{% static 'img/purple_dot.png' %}" class="home-bg"/>
+              <img alt="StyleOutlined12312" src="{% static 'icons/active_auction-200h.png' %}" class="home-style-outlined11"/>
+            </div>
+          </div>
+          <div class="home-card1">
+            <span class="home-text001">{{ n_bids }}</span>
+            <span class="home-text003">Bids</span>
+            <div class="home-mark">
+              <img alt="Bg2178" src="{% static 'img/red_dot.png' %}" class="home-bg1"/>
+              <img alt="StyleOutlined12312" src="{% static 'icons/bids-200h.png' %}" class="home-style-outlined12"/>
+            </div>
+          </div>
+          <div class="home-card2">
+            <span class="home-text001">{{ n_lots }}</span>
+            <span class="home-text003">All Auction</span>
+            <div class="home-mark">
+              <img alt="Bg2178" src="{% static 'img/green_dot.png' %}" class="home-bg2"/>
+              <img alt="StyleOutlined12312" src="{% static 'icons/all_auction-200h.png' %}" class="home-style-outlined13"/>
+            </div>
+          </div>
+        </div>
+        <span class="home-text018">
+          <span>Info Auctions</span>
+        </span>
+      </div>
+      <div class="home-recent">
+        <div class="home-recent-activity">
+          <span class="home-text020">See more</span>
+          <span class="home-text022">Recent Activity</span>
+        </div>
+        <div class="home-list">
+          {% if highest_bids %}
+          {% for h in highest_bids|slice:":5" %}
+          <div class="home-item{{ forloop.counter }}">
+            <img alt="Spliter2179" src="{% static 'img/spliter.svg' %}" class="home-spliter"/>
+            <div class="home-group7">
+              <div class="home-user">
+                <div class="home-frame7">
+                  <span class="home-text024">{{ h.0 }}</span>
+                  <span class="home-text026">He offered for {{ h.1 }} ETH</span>
+                </div>
+                  {% with user_image="media/images/users/"|add:h.0|add:"/profile_pics.jpg" %}
+                    {% if user_image|file_exists %}
+                      <img class="home-avatar1" src="{{ user_image }}" alt="Immagine Utente">
+                    {% else %}
+                      <img class="home-avatar1" src="/media/images/users/default_profile.png" alt="Immagine Predefinita">
+                    {% endif %}
+                  {% endwith %} 
+              </div>
+              <span class="home-text029">{{ h.2|date:"d M H:i" }}</span>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <span class="home-frame7 home-text024">No activity</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="home-frame52">
+      <span class="home-text055">Trending Auctions</span>
+      <div class="home-item-grid">
+      
+        {% for lot in open_lots %}
+        <div class="home-item-card">
+          <img alt="Card2177" src="{% static 'img/card.png' %}" class="home-card3"/>
+          <a href="{% url 'collection' pk=lot.id %}" class="home-btn">
+            <span class="home-text057">Place a Bid</span>
+          </a>
+          <div class="home-info">
+            <span class="home-text059">
+              <span>{{ time_left|get_price_for_lot:lot.id }}</span>
+              <br />
+            </span>
+            <span class="home-text064">{{ current_price|get_price_for_lot:lot.id }} ETH</span>
+          </div>
+          <div class="home-info1">
+            <div class="home-matchvalue">
+              <span class="home-text066">Current Bid</span>
+            </div>
+            <span class="home-text068">Auction time</span>
+          </div>
+          <span class="home-text070">{{ lot.name }}</span>
+          <img alt="no image" src="/media/{{ lot.img }}" class="home-item"/>
+          <img alt="no background" src="{% static 'img/collections_background.svg' %}" class="collections-item"/>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+.saved-content {
+  gap: 50px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.saved-statusrow {
+  width: 1228px;
+  height: 48px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.saved-section {
+  top: 0px;
+  left: 0px;
+  width: 192.66722106933594px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.saved-text003 {
+  top: 30px;
+  left: 1.0140379667282104px;
+  color: rgba(0, 0, 0, 1);
+  width: 192px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.saved-text005 {
+  color: rgba(0, 0, 0, 1);
+  width: 172px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.saved-status {
+  top: 25px;
+  left: 1115px;
+  width: 113px;
+  height: 21px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.saved-text007 {
+  left: 69px;
+  color: rgba(108, 122, 160, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.saved-text009 {
+  color: rgba(108, 122, 160, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.saved-style-outlined11 {
+  top: 0px;
+  left: 52px;
+  width: 8px;
+  bottom: 0px;
+  height: 8px;
+  margin: auto;
+  position: absolute;
+}
+.saved-frame52 {
+  gap: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.saved-filter {
+  gap: 730px;
+  width: 1228px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  position: relative;
+}
+.saved-statusrow1 {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.saved-style-outlined31 {
+  top: 25px;
+  right: 28px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+}

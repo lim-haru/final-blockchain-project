@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load unicorn %}
+
+{% block head_title %}Item{% endblock %}
+
+{% block content %}
+{% unicorn_scripts %}
+<link rel="stylesheet" href="{% static 'css/item.css' %}">
+
+<div class="item-content">
+    <div class="item-group3">
+      <span class="item-text63">{{ lot.name }}</span>
+      <div class="item-statusrow">
+        <div class="item-status">
+          <span class="item-text65">Item</span>
+          <a href="{% url 'home' %}" class="item-text67"><span>Home</span></a>
+          <img alt="StyleOutlined1I214" src="{% static 'icons/greater.svg' %}" class="item-style-outlined11"/>
+        </div>
+        <div class="item-section">
+          <span class="item-text69">Welcome Item Page</span>
+          <span class="item-text71">Item</span>
+        </div>
+      </div>
+      <div class="item-itemdetail">
+        <div class="item-frame3">
+          <div class="item-group4">
+            <img alt="no image" src="/media/{{ lot.img }}" class="item-item"/>
+            {% if lot_saved == False %}
+              <a href="{% url 'add_to_favorites' lot.id %}">
+                <img alt="StyleOutlined32321" src="{% static 'icons/style%3Doutlined.svg' %}" class="item-style-outlined32"/>
+              </a>
+            {% else %}
+              <a href="{% url 'remove_from_favorites' lot.id %}">
+                <img alt="StyleOutlined32321" src="{% static 'icons/style%3Dfilled.svg' %}" class="item-style-outlined31"/>
+              </a>
+            {% endif %}
+          </div>
+          <div class="item-description">
+            <span class="item-text03">Description</span>
+            <span class="item-text05">{{ lot.description }}</span>
+          </div>
+        </div>
+        <div class="item-frame41">
+          <div class="item-profile">
+            {% if auction_status == 'closed' %}
+            <span class="item-text12">SALE ENDED ON {{ lot.endAuction|date:"F j, Y H:i" }}</span>
+            {% elif auction_status == 'started' %}
+              <span class="item-text12">SALE ENDS AT {{ lot.endAuction|date:"F j, Y H:i" }}</span>
+            {% else %}
+              <span class="item-text12">SALE STARTS AT {{ lot.startAuction|date:"F j, Y H:i" }}</span>
+            {% endif %}
+            <img alt="Spliter2033" src="{% static 'img/spliter.svg' %}" class="item-spliter"/>
+
+            <div class="item-frame2">
+              {% if auction_status == 'closed' %}
+                <div class="item-frame1">
+                  <div class="item-group1">
+                    <span class="item-text14">PURCHASE PRICE</span>
+                    <span class="item-text16">{{ lot.price }} ETH</span>
+                  </div>
+                </div>
+              {% elif auction_status == 'started' %}
+                {% csrf_token %} 
+                {% unicorn 'lotPrice' pk=lot.id lotStartAuction=lot.startAuction %}
+
+                <form method="POST" action="{% url 'submit_bid' pk=lot.id %}">
+                  {% csrf_token %} 
+                  <div class="item-placebid">
+                    <span class="item-text22">BID PRICE</span>
+                    <input type="number"  step="0.01" id="bid_amount" name="bid_amount" required placeholder="0" class="item-textinput input"/>
+                    <div class="item-btn">
+                      <input type="submit" class="item-text24" value="Place a Bid">
+                    </div>
+                  </div>
+                </form>
+
+              {% else %}
+              <div class="item-frame1">
+                <div class="item-group1">
+                  <span class="item-text14">STARTING PRICE</span>
+                  <span class="item-text16">{{ lot.startingPrice }} ETH</span>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="item-offers">
+            <span class="item-text25">Offers</span>
+            <div class="item-frame11">
+              {% if offers.1 %}
+                {% for offer in offers|slice:":6" %}
+                <div class="item-offer">
+                  <img alt="td2102" src="{% static 'img/item_td.svg' %}" class="item-td"/>
+                  <span class="item-text31">{{ offer.0 }}</span>
+                  <span class="item-text27">{{ offer.1 }} ETH</span>
+                  <span class="item-text29">{{ offer.2|date:"d M H:i" }}</span>
+                </div>
+                {% endfor %}
+              {% else %}
+                <span>No offers</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

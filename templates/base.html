@@ -1,0 +1,221 @@
+{% load static %} 
+<!DOCTYPE html>
+  <head>
+    <title>{% block head_title %}{% endblock %}</title>
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"]::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" data-tag="font"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+
+  <body>
+    <div class="activity-container">
+      <div class="activity-attivitwhitetheme">
+        <div class="activity-frame5">
+          <div class="activity-sidebar">
+            <div class="activity-frame6">
+              <img alt="SideBar2125" src="{% static 'img/sidebar.png' %}" class="activity-side-bar1"/>
+            </div>
+            <div class="activity-frame51">
+              <img alt="Logo2125" src="{% static 'icons/logo.png' %}" class="activity-logo"/>
+              {% if user.is_authenticated %}
+                <a href="{% url 'custom_logout' %}" class="activity-navlink">
+                  <img alt="StyleOutlined12312" src="{% static 'icons/sign_out.svg' %}" class="activity-style-outlined6"/>
+                </a>
+              {% else %}
+                <a href="{% url 'login' %}" class="activity-navlink">
+                  <img alt="StyleOutlined12312" src="{% static 'icons/sign_in.svg' %}" class="activity-style-outlined6"/>
+                </a>
+              {% endif %}
+              <a href="{% url 'collections' %}" class="activity-navlink">
+                <img alt="StyleOutlined12312" src="{% static 'icons/collections.svg' %}" class="activity-style-outlined1"/>
+              </a>
+              <a href="{% url 'purchased' %}" class="activity-navlink1">
+                <img alt="StyleOutlined42312" src="{% static 'icons/purchased.svg' %}" class="activity-style-outlined4"/>
+              </a>
+              <a href="{% url 'activity' %}" class="activity-navlink2">
+                <img alt="StyleOutlined52312" src="{% static 'icons/activity.svg' %}" class="activity-style-outlined5"/>
+              </a>
+              <a href="{% url 'saved' %}" class="activity-navlink3">
+                <img alt="StyleOutlined32312" src="{% static 'icons/saved.svg' %}" class="activity-style-outlined3"/>
+              </a>
+              <a href="{% url 'home' %}" class="activity-navlink4">
+                <img alt="StyleOutlined22312" src="{% static 'icons/home.svg' %}" class="activity-style-outlined2"/>
+              </a>
+            </div>
+          </div>
+
+          <div class="activity-rightside">
+            <div class="activity-frame52">
+
+              <div class="activity-header">
+                {% if user.profile.image.url %}
+                  <img alt="no img" src="{{ user.profile.image.url }}" class="activity-avatar"/>
+                {% endif %}
+
+                <form action="{% url 'collections' %}" method="get">
+                  {% csrf_token %}
+                  <div class="activity-input">
+                    <input type="text" id="search" name="search" placeholder="Search Here" class="activity-input2"/>
+                    <img alt="SearchI214" src="{% static 'icons/search.svg' %}" class="activity-search"/>
+                  </div>
+                </form>
+
+                <img alt="StyleOutlined8I214" src="{% static 'icons/moon.svg' %}" class="activity-style-outlined8"/>
+                <div class="activity-style-outlined7">
+                  <div class="activity-group">
+                    <img alt="VectorI214" src="{% static 'icons/bell.svg' %}" class="activity-vector"/>
+                  </div>
+                </div>
+              </div>
+              {% block content %} 
+              {% endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <style>
+    .collections-active-button {
+      gap: 10px;
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+      border-radius: 14px;
+      justify-content: center;
+      background-color: rgba(111, 79, 242, 1);
+    }
+    
+    .collections-inactive-button {
+      gap: 10px;
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+      border-radius: 14px;
+      justify-content: center;
+      background-color: transparent;
+    }
+  
+    .active-button {
+        color: white;
+        height: auto;
+        font-size: 14px;
+        font-style: Regular;
+        text-align: left;
+        font-family: Poppins;
+        font-weight: 400;
+        line-height: normal;
+        font-stretch: normal;
+        text-decoration: none;
+    }
+  
+    .inactive-button {
+        color: black;
+        height: auto;
+        font-size: 14px;
+        font-style: Regular;
+        text-align: left;
+        font-family: Poppins;
+        font-weight: 400;
+        line-height: normal;
+        font-stretch: normal;
+        text-decoration: none;
+    }
+  </style>
+  
+  <script>
+      function showActive() {
+          document.getElementById("openLot").style.display = "block";
+          document.getElementById("upcomingLot").style.display = "none";
+          document.getElementById("closedLot").style.display = "none";
+  
+          document.getElementById("activeButton").classList.add("active-button");
+          document.getElementById("activeButton").classList.remove("inactive-button");
+          document.getElementById("closedButton").classList.add("inactive-button");
+          document.getElementById("closedButton").classList.remove("active-button");
+          document.getElementById("upcomingButton").classList.add("inactive-button");
+          document.getElementById("upcomingButton").classList.remove("active-button");
+  
+          document.getElementById("collectionsActiveButton").classList.add("collections-active-button");
+          document.getElementById("collectionsActiveButton").classList.remove("collections-inactive-button");
+          document.getElementById("collectionsClosedButton").classList.add("collections-inactive-button");
+          document.getElementById("collectionsClosedButton").classList.remove("collections-active-button");
+          document.getElementById("collectionsUpcomingButton").classList.add("collections-inactive-button");
+          document.getElementById("collectionsUpcomingButton").classList.remove("collections-active-button");
+      }
+  
+      function showUpcoming() {
+          document.getElementById("openLot").style.display = "none";
+          document.getElementById("upcomingLot").style.display = "block";
+          document.getElementById("closedLot").style.display = "none";
+  
+          document.getElementById("activeButton").classList.add("inactive-button");
+          document.getElementById("activeButton").classList.remove("active-button");
+          document.getElementById("closedButton").classList.add("inactive-button");
+          document.getElementById("closedButton").classList.remove("active-button");
+          document.getElementById("upcomingButton").classList.add("active-button");
+          document.getElementById("upcomingButton").classList.remove("inactive-button");
+  
+          document.getElementById("collectionsActiveButton").classList.add("collections-inactive-button");
+          document.getElementById("collectionsActiveButton").classList.remove("collections-active-button");
+          document.getElementById("collectionsClosedButton").classList.add("collections-inactive-button");
+          document.getElementById("collectionsClosedButton").classList.remove("collections-active-button");
+          document.getElementById("collectionsUpcomingButton").classList.add("collections-active-button");
+          document.getElementById("collectionsUpcomingButton").classList.remove("collections-inactive-button");
+      }
+
+      function showClosed() {
+          document.getElementById("openLot").style.display = "none";
+          document.getElementById("upcomingLot").style.display = "none";
+          document.getElementById("closedLot").style.display = "block";
+  
+          document.getElementById("activeButton").classList.add("inactive-button");
+          document.getElementById("activeButton").classList.remove("active-button");
+          document.getElementById("closedButton").classList.add("active-button");
+          document.getElementById("closedButton").classList.remove("inactive-button");
+          document.getElementById("upcomingButton").classList.add("inactive-button");
+          document.getElementById("upcomingButton").classList.remove("active-button");
+  
+          document.getElementById("collectionsActiveButton").classList.add("collections-inactive-button");
+          document.getElementById("collectionsActiveButton").classList.remove("collections-active-button");
+          document.getElementById("collectionsClosedButton").classList.add("collections-active-button");
+          document.getElementById("collectionsClosedButton").classList.remove("collections-inactive-button");
+          document.getElementById("collectionsUpcomingButton").classList.add("collections-inactive-button");
+          document.getElementById("collectionsUpcomingButton").classList.remove("collections-active-button");
+      }
+  </script>
+
+</html>

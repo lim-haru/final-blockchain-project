@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_title %}Activity{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/activity.css' %}">
+
+<div class="activity-content">
+    <div class="activity-statusrow">
+      <span class="activity-text">Active Bids</span>
+    </div>
+    <div class="activity-table">
+      <div class="activity-th">
+        <span class="activity-text02">Item List</span>
+        <span class="activity-text04">Open Price</span>
+        <span class="activity-text06">Your Offer</span>
+        <span class="activity-text08">Recent Offer</span>
+        <span class="activity-text10">Term</span>
+      </div>
+      <img alt="Split2021" src="{% static 'img/split.svg' %}" class="activity-split"/>
+
+      {% for my_bid in my_bids|slice:":12" %}
+      <div class="activity-td">
+        <img alt="td2021" src="{% static 'img/td.svg' %}" class="activity-td01"/>
+        <span class="activity-text12">{{ my_bid.1.startingPrice }} ETH</span>
+        <span class="activity-text14">{{ my_bid.2.1 }} ETH</span>
+        <span class="activity-text16">{{ my_bid.0.2|date:"d M H:i" }}</span>
+        <span class="activity-text18">{{ my_bid.0.1 }} ETH</span>
+        <div class="activity-item">
+          <img alt="no image" src="/media/{{ my_bid.1.img }}" class="activity-item01"/>
+          <span class="activity-text20">{{ my_bid.1.name }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %}

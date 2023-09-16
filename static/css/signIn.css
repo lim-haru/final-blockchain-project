@@ -1,0 +1,166 @@
+.login-content {
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  align-self: center;
+}
+.login-group3 {
+  width: 599px;
+  height: 391px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.login-itemdetail {
+  gap: 57px;
+  top: 71px;
+  left: 0px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.login-formprofile {
+  width: 599px;
+  height: 320px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.login-text03 {
+  left: 12px;
+  color: rgba(0, 0, 0, 1);
+  width: 553px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-text04 {
+  text-decoration: NONE;
+}
+.login-profileform {
+  top: 40px;
+  left: 0px;
+  width: 599px;
+  height: 290px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.login-input1 {
+  top: 19px;
+  left: 20.000091552734375px;
+  width: 554px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+input[name="login"], input[name="password"] {
+  top: 30px;
+  left: 0px;
+  width: 554px;
+  height: 40px;
+  position: absolute;
+  border-color: rgba(101, 100, 106, 1);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 8px;
+}
+.login-text06 {
+  left: 1px;
+  color: rgba(0, 0, 0, 1);
+  width: 80px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-input2 {
+  top: 99px;
+  left: 20px;
+  width: 554px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.login-input3 {
+  top: 185px;
+  left: 20px;
+  width: 554px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+input[name="remember"] {
+  left: 90px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(101, 100, 106, 1);
+  border-style: solid;
+  border-radius: 6px;
+}
+.login-btn {
+  top: 225px;
+  left: 21px;
+  width: 111px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 9px;
+  background-color: rgba(111, 79, 242, 1);
+}
+.login-text12 {
+  top: 10px;
+  left: 25px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  font-size: 14px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-text14 {
+  color: rgba(0, 0, 0, 1);
+  width: 489px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

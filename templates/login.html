@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block head_title %}Sign In{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/signIn.css' %}">
+
+<div class="login-content">
+  <div class="login-group3">
+    <span class="login-text14">Sign In</span>
+    <div class="login-itemdetail">
+      <div class="login-formprofile">
+        <span class="login-text03">
+          <span class="login-text04">
+            If you have not created an account yet, then please
+            <b><a href="{% url 'signup' %}">sign up</a></b>
+          </span>
+        </span>
+
+        <form class="login-profileform" id="signin_form" method="post" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {% for field in form %}
+          <div class="login-input{{ forloop.counter }} ">
+            <div class="login-text06">{{ field.label }}</div>
+            {{ field }}
+            {{ field.as_p }}
+          </div>
+          {% endfor %}
+  
+          <div class="login-btn">
+            <button class="login-text12" type="submit">Sign Up</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

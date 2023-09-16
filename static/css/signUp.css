@@ -1,0 +1,169 @@
+.sign-content {
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  align-self: center;
+}
+.sign-group3 {
+  width: 599px;
+  height: 531px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-itemdetail {
+  gap: 57px;
+  top: 71px;
+  left: 0px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.sign-formprofile {
+  width: 599px;
+  height: 460px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-text03 {
+  left: 12px;
+  color: rgba(0, 0, 0, 1);
+  width: 553px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-text04 {
+  text-decoration: NONE;
+}
+.sign-profileform {
+  top: 40px;
+  left: 0px;
+  width: 599px;
+  height: 420px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.sign-input1 {
+  top: 19px;
+  left: 20.000091552734375px;
+  width: 554px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+input[name="username"], input[name="email"], input[name="password1"], input[name="password2"] {
+  top: 30px;
+  left: 0px;
+  width: 554px;
+  height: 40px;
+  position: absolute;
+  border-color: rgba(101, 100, 106, 1);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 8px;
+}
+.sign-text06 {
+  left: 1px;
+  color: rgba(0, 0, 0, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-input2 {
+  top: 99px;
+  left: 20px;
+  width: 554px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-input3 {
+  top: 179px;
+  left: 20px;
+  width: 554px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-input4 {
+  top: 259px;
+  left: 20px;
+  width: 554px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-btn {
+  top: 352px;
+  left: 21px;
+  width: 111px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 9px;
+  background-color: rgba(111, 79, 242, 1);
+}
+.sign-text14 {
+  top: 10px;
+  left: 25px;
+  color: rgba(255, 255, 255, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-text16 {
+  color: rgba(0, 0, 0, 1);
+  width: 489px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

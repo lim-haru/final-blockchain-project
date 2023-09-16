@@ -1,0 +1,452 @@
+.activity-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.activity-attivitwhitetheme {
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(242, 242, 242, 1);
+}
+.activity-frame5 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: flex-start;
+}
+.activity-sidebar {
+  gap: 10px;
+  width: 80px;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.activity-frame6 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+}
+.activity-side-bar1 {
+  width: 80px;
+  height: 100%;
+  align-self: stretch;
+}
+.activity-frame51 {
+  gap: 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 30px;
+  bottom: 0px;
+  height: auto;
+  display: flex;
+  padding: 10px;
+  z-index: 1;
+  position: absolute;
+  align-self: center;
+  margin-top: 52px;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 52px;
+  justify-content: flex-start;
+}
+.activity-logo {
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+.activity-style-outlined6 {
+  left: 0px;
+  right: 0px;
+  width: 24px;
+  bottom: 0px;
+  height: 24px;
+  margin: auto;
+  position: absolute;
+}
+.activity-navlink {
+  display: contents;
+}
+.activity-style-outlined1 {
+  top: 158px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  text-decoration: none;
+}
+.activity-navlink1 {
+  display: contents;
+}
+.activity-style-outlined4 {
+  top: 227px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  text-decoration: none;
+}
+.activity-navlink2 {
+  display: contents;
+}
+.activity-style-outlined5 {
+  top: 298px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  text-decoration: none;
+}
+.activity-navlink3 {
+  display: contents;
+}
+.activity-style-outlined3 {
+  top: 369px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  text-decoration: none;
+}
+.activity-navlink4 {
+  display: contents;
+}
+.activity-style-outlined2 {
+  top: 88px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  text-decoration: none;
+}
+.activity-rightside {
+  gap: 10px;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.activity-frame52 {
+  gap: 50px;
+  display: flex;
+  padding: 30px 0 0;
+  align-self: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.activity-header {
+  width: 1220px;
+  height: 50px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.activity-avatar {
+  top: 4px;
+  left: 1177px;
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  border-radius: 112.5px;
+}
+.activity-input {
+  top: 0px;
+  left: 0px;
+  width: 380px;
+  height: 50px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 1;
+  border-radius: 12px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+.activity-input2 {
+  top: 0px;
+  left: 0px;
+  padding-left: 58px;
+  width: 380px;
+  height: 50px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 1;
+  border-radius: 12px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.activity-search {
+  top: 15px;
+  left: 18px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.activity-style-outlined8 {
+  top: 13px;
+  left: 1085px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.activity-style-outlined7 {
+  top: 13px;
+  left: 1124px;
+  width: 27px;
+  height: 30px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.activity-group {
+  top: 2px;
+  left: 4.000001907348633px;
+  width: 18.81316566467285px;
+  height: 19.381099700927734px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.activity-vector {
+  top: 0px;
+  left: 0px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+}
+
+
+
+/* Collections */
+.collections-selectrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  justify-content: center;
+  background-color: rgba(111, 79, 242, 1);
+}
+.collections-select {
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.collections-item-grid {
+  gap: 30px;
+  width: 1233px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+  align-items: left;
+  flex-shrink: 0;
+  justify-content: left;
+  max-height: 800px;
+  overflow-y: auto;
+}
+.collections-item-card {
+  gap: 10px;
+  width: 282px;
+  height: 385px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+.collections-card {
+  top: 0px;
+  left: 0px;
+  width: 282px;
+  height: 385px;
+  position: absolute;
+  border-radius: 18px;
+}
+.collections-btn {
+  top: 321.9478759765625px;
+  left: 20px;
+  width: 242px;
+  height: 38.21339797973633px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 9px;
+  background-color: rgba(111, 79, 242, 1);
+}
+.collections-text022 {
+  top: 9.4193115234375px;
+  left: 44.58642578125px;
+  color: rgba(255, 255, 255, 1);
+  width: 152px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.collections-info {
+  top: 278.0024719238281px;
+  left: 20px;
+  width: 242px;
+  height: 18.151365280151367px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.collections-text024 {
+  left: 0px;
+  color: rgba(108, 122, 160, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.collections-text029 {
+  color: rgba(108, 122, 160, 1);
+  right: 0px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.collections-info01 {
+  top: 256.985107421875px;
+  left: 20px;
+  width: 241.5559539794922px;
+  height: 17.196029663085938px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.collections-matchvalue {
+  top: 0px;
+  left: 163px;
+  width: 78.55595397949219px;
+  height: 14.330024719238281px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.collections-text031 {
+  color: rgba(0, 0, 0, 1);
+  right: 0px;
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  text-align: right;
+}
+.collections-text033 {
+  color: rgb(0, 0, 0);
+  width: 105px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.collections-text034 {
+  top: 221px;
+  left: 22px;
+  color: rgba(0, 0, 0, 1);
+  width: 240px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.collections-item {
+  top: 19.106698989868164px;
+  left: 19px;
+  width: 243px;
+  height: 179px;
+  position: absolute;
+  border-radius: 19px;
+}
+
+
+.collections-card-closed {
+  top: 0px;
+  left: 0px;
+  width: 282px;
+  height: 320px;
+  position: absolute;
+  border-radius: 18px;
+}

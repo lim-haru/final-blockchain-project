@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block head_title %}Signup{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/signUp.css' %}">
+
+<div class="sign-content">
+  <div class="sign-group3">
+    <span class="sign-text16">Sign Up</span>
+    <div class="sign-itemdetail">
+      <div class="sign-formprofile">
+        <span class="sign-text03">
+          <span class="sign-text04">
+            Already have an account? Then please
+            <b><a href="{% url 'login' %}">sign in</a></b>
+          </span>
+        </span>
+
+        <form class="sign-profileform" id="signup_form" method="post" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+          {% for field in form %}
+          <div class="sign-input{{ forloop.counter }} ">
+            <div class="sign-text06">{{ field.label }}</div>
+            {{ field }}
+            {{ field.as_p }}
+          </div>
+          {% endfor %}
+  
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          
+          <div class="sign-btn">
+            <button class="sign-text14" type="submit">Sign Up</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

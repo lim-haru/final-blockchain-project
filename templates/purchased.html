@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_title %}Purchased{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/purchased.css' %}">
+
+<div class="purchased-content">
+    <div class="purchased-statusrow">
+      <div class="purchased-status">
+        <span class="purchased-text003">
+          <span>Purchased</span>
+        </span>
+        <a href="{% url 'home' %}" class="purchased-text005">
+          <span>Home</span>
+        </a>
+        <img alt="StyleOutlined1I214" src="{% static 'icons/greater.svg' %}" class="purchased-style-outlined11"/>
+      </div>
+      <div class="purchased-section">
+        <span class="purchased-text007">
+          <span>Welcome Purchased Page</span>
+        </span>
+        <span class="purchased-text009">
+          <span>Purchased Items</span>
+        </span>
+      </div>
+    </div>
+    <div class="purchased-frame52">
+      <div class="purchased-filter">
+
+        <div class="collections-selectrow">
+          <div class="collections-select">
+            <a href="?category=all">All</a>
+          </div>
+          <div class="collections-select">
+            <a href="?category=car">Car</a>
+          </div>
+          <div class="collections-select">
+            <a href="?category=motorcycle">Motorcycle</a>
+          </div>
+          <div class="collections-select">
+            <a href="?category=scooters">Scooters</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="collections-item-grid">
+        {% for lot in user_lots %}
+        <div class="collections-item-card">
+          <img alt="Card2142" src="{% static 'img/card.png' %}" class="collections-card"/>
+
+          <a href="{% url 'collection' pk=lot.id %}" class="collections-btn">
+            <span class="collections-text022">Info</span>
+          </a>
+
+          <div class="collections-info">
+            <span class="collections-text024">{{ lot.price }}</span>
+          </div>
+          <div class="collections-info01">
+            <span class="collections-text033">Purchase price</span>
+          </div>
+          <span class="purchased-text020">
+            <span>{{ lot.name }}</span>
+          </span>
+          <img alt="no image" src="/media/{{ lot.img }}" class="collections-item"/>
+          <img alt="no background" src="{% static 'img/collections_background.svg' %}" class="collections-item"/>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}
